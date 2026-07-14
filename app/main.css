@@ -1,3 +1,86 @@
+:root {
+  --medium-gray: #bababa;
+  --light-gray: #e3e3e3;
+}
 body {
-  background-color: pink;
+  margin: 0;
+  min-height: 100vh;
+  font-family: "Poppins", sans-serif;
+  background: var(--light-gray);
+}
+header {
+  background: var(--medium-gray);
+}
+#header-content {
+  width: 700px;
+  max-width: 90%;
+  margin: auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+}
+#logo {
+  width: 300px;
+  max-width: 90%;
+  height: auto;
+}
+text {
+  font-family: "Poppins", sans-serif;
+  font-size: 80px;
+  font-weight: 700;
+  fill: none;
+  stroke: url(#gradient);
+  stroke-width: 5px;
+  stroke-linejoin: bevel;
+  text-anchor: start;
+  dominant-baseline: middle;
+  letter-spacing: 3px;
+  stroke-dasharray: 2000;
+  stroke-dashoffset: 2000;
+  animation: draw 10s ease forwards;
+}
+#not-word {
+  font-size: 110px !important;
+}
+@keyframes draw {
+  0% {
+    stroke-dashoffset: 2000;
+    text-shadow: none;
+  }
+  100% {
+    stroke-dashoffset: 0;
+    text-shadow:
+      0px 0px 30px white,
+      0px 0px 20px white,
+      0px 0px 10px white,
+      0px 0px 10px white,
+      0px 0px 10px white,
+      0px 0px 5px white,
+      0px 0px 2px white;
+  }
+}
+label {
+  white-space: nowrap;
+  padding: 10px;
+  text-shadow:
+    0px 0px 40px white,
+    0px 0px 40px white,
+    0px 0px 20px white,
+    0px 0px 20px white,
+    0px 0px 10px white,
+    0px 0px 10px white,
+    0px 0px 5px white,
+    0px 0px 5px white,
+    0px 0px 2px white,
+    0px 0px 2px white;
+}
+select {
+  padding: 5px;
+  border-radius: 10px;
+}
+#header-transition {
+  width: 100%;
+  height: 30px;
+  background: linear-gradient(to bottom, var(--medium-gray), var(--light-gray));
 }
