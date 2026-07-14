@@ -84,3 +84,20 @@ select {
   height: 30px;
   background: linear-gradient(to bottom, var(--medium-gray), var(--light-gray));
 }
+#overlay {
+  background: rgba(255, 255, 255, 0.75);
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 0px 20px;
+}
+#overlay-content {
+  background: white;
+  width: 700px;
+  max-width: 90%;
+  height: 100%;
+  overflow-y: scroll;
+  padding-right: 20px;
+}
