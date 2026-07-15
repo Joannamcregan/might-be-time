@@ -2,7 +2,7 @@ import React from "react";
 
 function Overlay() {
   return (
-    <div id="overlay">
+    <div id="overlay" class="hidden">
       <div id="overlay-content">
         <h1>We use safety precautions to protect our visitors</h1>
         <p>

@@ -1,9 +1,16 @@
 :root {
   --medium-gray: #bababa;
   --light-gray: #e3e3e3;
+  --muted-light-purple: #efdbee;
+  --muted-light-blue: #dfdaf4;
+  --muted-light-teal: #d5e7ec;
+}
+.hidden {
+  display: none !important;
 }
 body {
   margin: 0;
+  padding: 0;
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
   background: var(--light-gray);
@@ -85,7 +92,7 @@ select {
   background: linear-gradient(to bottom, var(--medium-gray), var(--light-gray));
 }
 #overlay {
-  background: rgba(255, 255, 255, 0.75);
+  background: rgba(255, 255, 255, 0.85);
   position: absolute;
   top: 0;
   bottom: 0;
@@ -101,4 +108,39 @@ select {
   max-width: 90%;
   height: 100%;
   overflow-y: scroll;
+}
+footer {
+  background: var(--bright-purple);
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 60px;
+  padding: 40px;
+  text-align: center;
+  animation: backgroundColorShift 5s alternate infinite;
+  text-shadow:
+    0px 0px 5px white,
+    0px 0px 5px white,
+    0px 0px 5px white,
+    0px 0px 10px white,
+    0px 0px 10px white,
+    0px 0px 10px white,
+    0px 0px 20px white,
+    0px 0px 20px white,
+    0px 0px 20px white;
+}
+@keyframes backgroundColorShift {
+  0% {
+    background: var(--muted-light-purple);
+    box-shadow: 0px -5px 25px var(--muted-light-purple);
+  }
+  70% {
+    background-color: var(--muted-light-blue);
+    box-shadow: 0px -5px 25px var(--muted-light-blue);
+  }
+  100% {
+    background-color: var(--muted-light-teal);
+    box-shadow: 0px -5px 25px var(--muted-light-teal);
+  }
 }
