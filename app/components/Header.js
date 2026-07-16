@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 function Header() {
   return (
@@ -23,13 +24,15 @@ function Header() {
               ALONE
             </text>
           </svg>
+          <Link to="/">gaining clarity</Link>
+          <Link to="/food-security">food</Link>
           <div id="nav-select">
-            <label for="nav-select">Find help with </label>
+            <label htmlForor="nav-select">Find help with </label>
             <select id="nav-select">
-              <option value="clarity">gaining clarity</option>
+              <option value="clarity"></option>
               <option value="risk">knowing your risk</option>
               <option value="housing">safe housing</option>
-              <option value="food">food</option>
+              <option value="food"></option>
               <option value="utilities">utilities</option>
               <option value="transportation">transportation</option>
               <option value="health">health and healing</option>

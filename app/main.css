@@ -9,11 +9,19 @@
   display: none !important;
 }
 body {
+  position: relative;
+  height: fit-content;
   margin: 0;
-  padding: 0;
-  min-height: 100vh;
+  padding: 0px 0px 180px 0px;
   font-family: "Poppins", sans-serif;
   background: var(--light-gray);
+}
+main {
+  height: fit-content;
+  padding: 20px;
+  width: 700px;
+  max-width: 95%;
+  margin: auto;
 }
 header {
   background: var(--medium-gray);
