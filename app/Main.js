@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Overlay from "./components/Overlay";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
-import Food from "./components/Food";
+import Risk from "./components/Risk";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function Main() {
@@ -14,7 +14,7 @@ function Main() {
       <Overlay />
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/food-security" element={<Food />} />
+        <Route path="/risk" element={<Risk />} />
       </Routes>
       <Footer />
     </BrowserRouter>

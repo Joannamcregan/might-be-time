@@ -18,7 +18,6 @@ body {
 }
 main {
   height: fit-content;
-  padding: 20px;
   width: 700px;
   max-width: 95%;
   margin: auto;
@@ -27,18 +26,26 @@ header {
   background: var(--medium-gray);
 }
 #header-content {
-  width: 700px;
+  width: 1200px;
   max-width: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
   justify-content: space-around;
+  border: solid white 2px;
+}
+#menu,
+#menu-link {
+  border: solid pink 2px;
+  width: 240px;
 }
 #logo {
   width: 300px;
   max-width: 90%;
   height: auto;
+  border: solid lavender 2px;
 }
 text {
   font-family: "Poppins", sans-serif;
@@ -89,10 +96,6 @@ label {
     0px 0px 5px white,
     0px 0px 2px white,
     0px 0px 2px white;
-}
-select {
-  padding: 5px;
-  border-radius: 10px;
 }
 #header-transition {
   width: 100%;

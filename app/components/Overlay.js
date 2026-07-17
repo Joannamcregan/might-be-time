@@ -12,16 +12,11 @@ function Overlay() {
         </p>
         <p>
           We will also redirect you to a different site if you minimize the
-          browser or navigate away from this browser tab.
-        </p>
-        <p>
-          We will try to redirect you if we notice any sudden jerking movements
-          from your mobile device. Please note: this feature has only been
-          tested successfully with Chrome, Firefox, Opera, and Duck Duck Go
-          browsers. To enable this feature for Safari, please click
+          browser or navigate away from this browser tab. And we will try to
+          redirect you if we notice any sudden jerking movements from your
+          mobile device. If you are using an iPhone, please click
           <span id="safari-permission"> here </span> so we can prompt you to
           give us permission to access information about your device's motions.
-          This feature does not work in Brave browser.
         </p>
         <p>
           <em>
