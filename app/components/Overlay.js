@@ -1,20 +1,22 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 
-function Overlay() {
+function Overlay(props) {
   return (
-    <div id="overlay" class="hidden">
+    <div
+      id="overlay"
+      //   className={localStorage.getItem("selectedStyle") ? "hidden" : ""}
+    >
       <div id="overlay-content">
-        <h1>We use safety precautions to protect our visitors</h1>
+        <h1>Safety first</h1>
         <p>
           If you need to quickly leave this page, press the X button near the
           bottom right corner of the screen and we will redirect you to a
           different website.
         </p>
         <p>
-          We will also redirect you to a different site if you minimize the
-          browser or navigate away from this browser tab. And we will try to
-          redirect you if we notice any sudden jerking movements from your
-          mobile device. If you are using an iPhone, please click
+          We will also try to redirect you if we notice any sudden jerking
+          movements from your mobile device. If you are using an iPhone, please
+          click
           <span id="safari-permission"> here </span> so we can prompt you to
           give us permission to access information about your device's motions.
         </p>
@@ -43,18 +45,18 @@ function Overlay() {
         </p>
         <p>
           If we need to redirect you, we would like to send you to a website
-          that it would make sense for you to be visiting. Please select one of
-          the following options.
+          that you would normally visit. Please select one of the following
+          options.
         </p>
         <div>
           <input type="radio" id="cnn" name="redirect-selection" value="cnn" />
-          <label for="cnn">CNN</label>
+          <label htmlFor="cnn">CNN</label>
           <br></br>
           <input type="radio" id="nbc" name="redirect-selection" value="nbc" />
-          <label for="nbc">NBC</label>
+          <label htmlFor="nbc">NBC</label>
           <br></br>
           <input type="radio" id="fox" name="redirect-selection" value="fox" />
-          <label for="fox">Fox News</label>
+          <label htmlFor="fox">Fox News</label>
           <br></br>
           <input
             type="radio"
@@ -62,50 +64,23 @@ function Overlay() {
             name="redirect-selection"
             value="aljazeera"
           />
-          <label for="aljazeera">Al Jazeera</label>
-          <br></br>
-          <input
-            type="radio"
-            id="espn"
-            name="redirect-selection"
-            value="espn"
-          />
-          <label for="espn">ESPN</label>
-          <br></br>
-          <input
-            type="radio"
-            id="yahoo"
-            name="redirect-selection"
-            value="yahoo"
-          />
-          <label for="yahoo">Yahoo</label>
-          <br></br>
-          <input
-            type="radio"
-            id="bible"
-            name="redirect-selection"
-            value="bible"
-          />
-          <label for="bible">Online Bible</label>
-          <br></br>
-          <input
-            type="radio"
-            id="quran"
-            name="redirect-selection"
-            value="quran"
-          />
-          <label for="quran">Online Quran</label>
-          <br></br>
-          <input
-            type="radio"
-            id="torah"
-            name="redirect-selection"
-            value="torah"
-          />
-          <label for="torah">Online Torah</label>
+          <label htmlFor="aljazeera">Al Jazeera</label>
           <br></br>
         </div>
-        <button>Okay</button>
+        <button
+          onClick={() => {
+            let selection = document.querySelector(
+              'input[name="redirect-selection"]:checked'
+            ).value;
+            props.setRedirectSelection(selection);
+            localStorage.setItem("selectedStyle", selection);
+            setTimeout(() => {
+              document.getElementById("overlay").classList.add("hidden");
+            }, 1000);
+          }}
+        >
+          Okay {props.redirectSelection}
+        </button>
       </div>
     </div>
   );

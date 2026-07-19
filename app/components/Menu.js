@@ -13,8 +13,8 @@ function ComponentName() {
       <p id="menu-link" onClick={toggleMenu}>
         Get help with...
       </p>
-      <div id="menu" class="hidden">
-        <p id="close-menu" class="hidden" onClick={toggleMenu}>
+      <div id="menu" className="hidden">
+        <p id="close-menu" className="hidden" onClick={toggleMenu}>
           close menu
         </p>
         <p>Get help with...</p>

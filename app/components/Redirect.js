@@ -1,7 +1,13 @@
 import React, { useEffect } from "react";
 
-function ComponentName() {
-  return <></>;
+function QuickExit() {
+  return (
+    <>
+      <div id="exit">
+        <span>Exit</span>
+      </div>
+    </>
+  );
 }
 
-export default ComponentName;
+export default QuickExit;
