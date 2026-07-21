@@ -1,9 +1,8 @@
 :root {
   --medium-gray: #bababa;
   --light-gray: #e3e3e3;
-  --muted-light-purple: #efdbee;
-  --muted-light-blue: #dfdaf4;
-  --muted-light-teal: #d5e7ec;
+  --basic-red: #e8372d;
+  --basic-navy: #043682;
 }
 .hidden {
   display: none !important;
@@ -22,8 +21,15 @@ main {
   max-width: 95%;
   margin: auto;
 }
-header {
-  background: var(--medium-gray);
+header.cnn {
+  background: var(--basic-red);
+}
+header.nbc {
+  background: var(--basic-navy);
+}
+img.logo {
+  width: 75px;
+  height: auto;
 }
 #header-content {
   width: 1200px;
@@ -35,72 +41,6 @@ header {
   align-items: center;
   justify-content: space-around;
   border: solid white 2px;
-}
-#menu,
-#menu-link {
-  border: solid pink 2px;
-  width: 240px;
-}
-#logo {
-  width: 300px;
-  max-width: 90%;
-  height: auto;
-  border: solid lavender 2px;
-}
-text {
-  font-family: "Poppins", sans-serif;
-  font-size: 80px;
-  font-weight: 700;
-  fill: none;
-  stroke: url(#gradient);
-  stroke-width: 5px;
-  stroke-linejoin: bevel;
-  text-anchor: start;
-  dominant-baseline: middle;
-  letter-spacing: 3px;
-  stroke-dasharray: 2000;
-  stroke-dashoffset: 2000;
-  animation: draw 10s ease forwards;
-}
-#not-word {
-  font-size: 110px !important;
-}
-@keyframes draw {
-  0% {
-    stroke-dashoffset: 2000;
-    text-shadow: none;
-  }
-  100% {
-    stroke-dashoffset: 0;
-    text-shadow:
-      0px 0px 30px white,
-      0px 0px 20px white,
-      0px 0px 10px white,
-      0px 0px 10px white,
-      0px 0px 10px white,
-      0px 0px 5px white,
-      0px 0px 2px white;
-  }
-}
-label {
-  white-space: nowrap;
-  padding: 10px;
-  text-shadow:
-    0px 0px 40px white,
-    0px 0px 40px white,
-    0px 0px 20px white,
-    0px 0px 20px white,
-    0px 0px 10px white,
-    0px 0px 10px white,
-    0px 0px 5px white,
-    0px 0px 5px white,
-    0px 0px 2px white,
-    0px 0px 2px white;
-}
-#header-transition {
-  width: 100%;
-  height: 30px;
-  background: linear-gradient(to bottom, var(--medium-gray), var(--light-gray));
 }
 #overlay {
   background: rgba(255, 255, 255, 0.85);
@@ -122,7 +62,6 @@ label {
   overflow-y: scroll;
 }
 footer {
-  background: var(--bright-purple);
   position: absolute;
   bottom: 0;
   left: 0;
@@ -130,29 +69,4 @@ footer {
   height: 60px;
   padding: 40px;
   text-align: center;
-  animation: backgroundColorShift 5s alternate infinite;
-  text-shadow:
-    0px 0px 5px white,
-    0px 0px 5px white,
-    0px 0px 5px white,
-    0px 0px 10px white,
-    0px 0px 10px white,
-    0px 0px 10px white,
-    0px 0px 20px white,
-    0px 0px 20px white,
-    0px 0px 20px white;
-}
-@keyframes backgroundColorShift {
-  0% {
-    background: var(--muted-light-purple);
-    box-shadow: 0px -5px 25px var(--muted-light-purple);
-  }
-  70% {
-    background-color: var(--muted-light-blue);
-    box-shadow: 0px -5px 25px var(--muted-light-blue);
-  }
-  100% {
-    background-color: var(--muted-light-teal);
-    box-shadow: 0px -5px 25px var(--muted-light-teal);
-  }
 }
