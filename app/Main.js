@@ -27,7 +27,7 @@ function Main() {
           element={<Risk redirectSelection={redirectSelection} />}
         />
       </Routes>
-      <Footer />
+      <Footer redirectSelection={redirectSelection} />
     </BrowserRouter>
   );
 }

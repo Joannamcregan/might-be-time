@@ -1,8 +1,8 @@
-import React, { useEffect } from "react";
+import React, { useState } from "react";
 
-function Footer() {
+function Footer(props) {
   return (
-    <footer>
+    <footer className={props.redirectSelection}>
       <p
         onClick={() => {
           document.getElementById("overlay").classList.remove("hidden");

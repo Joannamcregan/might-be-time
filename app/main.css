@@ -1,8 +1,11 @@
 :root {
   --medium-gray: #bababa;
-  --light-gray: #e3e3e3;
+  --basically-white: #fafafa;
   --basic-red: #e8372d;
   --basic-navy: #043682;
+  --crushed-black: rgb(17, 17, 17);
+  --light-lavender: rgb(239, 234, 246);
+  --light-teal: rgb(220, 237, 237);
 }
 .hidden {
   display: none !important;
@@ -16,7 +19,7 @@ body {
   margin: 0;
   padding: 0px 0px 180px 0px;
   font-family: "Poppins", sans-serif;
-  background: var(--light-gray);
+  background: var(--basically-white);
 }
 main {
   height: fit-content;
@@ -43,7 +46,6 @@ img.logo {
   flex-direction: row;
   align-items: center;
   justify-content: space-around;
-  border: solid white 2px;
   position: relative;
 }
 nav#menu {
@@ -75,23 +77,51 @@ nav#menu a:visited {
   color: white;
 }
 #overlay {
-  background: rgba(255, 255, 255, 0.85);
+  background: rgba(233, 250, 250, 0.95);
   position: absolute;
   top: 0;
   bottom: 0;
   left: 0;
   right: 0;
-  padding: 0px 20px;
+  z-index: 1000;
 }
 #overlay-content {
   background: white;
   color: black;
-  border: solid rgba(255, 255, 255, 0.75) 15px;
   box-sizing: border-box;
   width: 700px;
   max-width: 90%;
-  height: 100%;
+  height: fit-content;
   overflow-y: scroll;
+  padding: 20px;
+  margin: 20px auto;
+  border-radius: 20px;
+  box-shadow:
+    0px 3px 10px #999,
+    0px -1px 6px #999;
+}
+#redirect-options-section {
+  background: var(--light-lavender);
+  border-radius: 10px;
+  padding: 10px;
+}
+#redirect-options-section p {
+  margin-top: 0px;
+}
+#redirect-selection-options {
+  width: fit-content;
+  margin: 20px auto;
+  padding-right: 20px;
+}
+#redirect-selection-okay {
+  width: fit-content;
+  padding: 10px 30px;
+  background: var(--light-teal);
+  border: solid black 1px;
+  box-shadow: 0px 3px 5px #a7a7a7;
+  border-radius: 10px;
+  margin: 20px auto;
+  display: block;
 }
 footer {
   position: absolute;
@@ -101,4 +131,13 @@ footer {
   height: 60px;
   padding: 40px;
   text-align: center;
+  margin-top: 40px;
+}
+footer.cnn {
+  background: var(--crushed-black);
+  color: var(--basically-white);
+}
+footer.nbc {
+  background: var(--basic-navy);
+  color: white;
 }

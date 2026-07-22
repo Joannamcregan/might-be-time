@@ -20,6 +20,63 @@ function Overlay(props) {
           <span id="safari-permission"> here </span> so we can prompt you to
           give us permission to access information about your device's motions.
         </p>
+        <div id="redirect-options-section">
+          <p>
+            If we need to redirect you, we would like to send you to a website
+            that you would normally visit. Please select one of the following
+            options.
+          </p>
+          <div id="redirect-selection-options">
+            <input
+              type="radio"
+              id="cnn"
+              name="redirect-selection"
+              value="cnn"
+            />
+            <label htmlFor="cnn">CNN</label>
+            <br></br>
+            <input
+              type="radio"
+              id="nbc"
+              name="redirect-selection"
+              value="nbc"
+            />
+            <label htmlFor="nbc">NBC</label>
+            <br></br>
+            <input
+              type="radio"
+              id="fox"
+              name="redirect-selection"
+              value="fox"
+            />
+            <label htmlFor="fox">Fox News</label>
+            <br></br>
+            <input
+              type="radio"
+              id="aljazeera"
+              name="redirect-selection"
+              value="aljazeera"
+            />
+            <label htmlFor="aljazeera">Al Jazeera</label>
+            <br></br>
+          </div>
+          <span
+            id="redirect-selection-okay"
+            onClick={() => {
+              let selection = document.querySelector(
+                'input[name="redirect-selection"]:checked'
+              ).value;
+              props.setRedirectSelection(selection);
+              localStorage.setItem("selectedStyle", selection);
+              setTimeout(() => {
+                document.getElementById("overlay").classList.add("hidden");
+                window.scrollTo(0, 0);
+              }, 200);
+            }}
+          >
+            Okay
+          </span>
+        </div>
         <p>
           <em>
             <span>It's a good idea to clear your </span>
@@ -43,45 +100,6 @@ function Overlay(props) {
             </span>
           </em>
         </p>
-        <p>
-          If we need to redirect you, we would like to send you to a website
-          that you would normally visit. Please select one of the following
-          options.
-        </p>
-        <div>
-          <input type="radio" id="cnn" name="redirect-selection" value="cnn" />
-          <label htmlFor="cnn">CNN</label>
-          <br></br>
-          <input type="radio" id="nbc" name="redirect-selection" value="nbc" />
-          <label htmlFor="nbc">NBC</label>
-          <br></br>
-          <input type="radio" id="fox" name="redirect-selection" value="fox" />
-          <label htmlFor="fox">Fox News</label>
-          <br></br>
-          <input
-            type="radio"
-            id="aljazeera"
-            name="redirect-selection"
-            value="aljazeera"
-          />
-          <label htmlFor="aljazeera">Al Jazeera</label>
-          <br></br>
-        </div>
-        <button
-          onClick={() => {
-            let selection = document.querySelector(
-              'input[name="redirect-selection"]:checked'
-            ).value;
-            props.setRedirectSelection(selection);
-            localStorage.setItem("selectedStyle", selection);
-            setTimeout(() => {
-              document.getElementById("overlay").classList.add("hidden");
-              window.scrollTo(0, 0);
-            }, 200);
-          }}
-        >
-          Okay
-        </button>
       </div>
     </div>
   );
