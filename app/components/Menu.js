@@ -4,8 +4,8 @@ import { Link } from "react-router-dom";
 function ComponentName() {
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("hidden");
-    document.getElementById("menu-link").classList.toggle("hidden");
-    document.getElementById("close-menu").classList.toggle("hidden");
+    document.getElementById("menu-link").classList.toggle("invisible");
+    document.getElementById("close-menu").classList.toggle("invisible");
   }
 
   return (
@@ -17,7 +17,7 @@ function ComponentName() {
         onClick={toggleMenu}
       />
       <nav id="menu" className="hidden">
-        <p id="close-menu" className="hidden" onClick={toggleMenu}>
+        <p id="close-menu" className="invisible" onClick={toggleMenu}>
           close menu
         </p>
         <p>Get help with...</p>

@@ -4,7 +4,7 @@ function Overlay(props) {
   return (
     <div
       id="overlay"
-      //   className={localStorage.getItem("selectedStyle") ? "hidden" : ""}
+      // className={localStorage.getItem("selectedStyle") ? "hidden" : ""}
     >
       <div id="overlay-content">
         <h1>Safety first</h1>
@@ -76,7 +76,7 @@ function Overlay(props) {
             localStorage.setItem("selectedStyle", selection);
             setTimeout(() => {
               document.getElementById("overlay").classList.add("hidden");
-            }, 1000);
+            }, 200);
           }}
         >
           Okay {props.redirectSelection}

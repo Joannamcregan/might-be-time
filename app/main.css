@@ -7,6 +7,9 @@
 .hidden {
   display: none !important;
 }
+.invisible {
+  visibility: none;
+}
 body {
   position: relative;
   height: fit-content;
