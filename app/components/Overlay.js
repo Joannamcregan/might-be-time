@@ -76,10 +76,11 @@ function Overlay(props) {
             localStorage.setItem("selectedStyle", selection);
             setTimeout(() => {
               document.getElementById("overlay").classList.add("hidden");
+              window.scrollTo(0, 0);
             }, 200);
           }}
         >
-          Okay {props.redirectSelection}
+          Okay
         </button>
       </div>
     </div>

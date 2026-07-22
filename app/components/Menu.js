@@ -13,20 +13,23 @@ function ComponentName() {
       <img
         src="../img/white_hamburger_menu.png"
         id="menu-link"
-        aria-label="toggle menu"
+        aria-label="open menu"
         onClick={toggleMenu}
       />
       <nav id="menu" className="hidden">
-        <p id="close-menu" className="invisible" onClick={toggleMenu}>
-          close menu
-        </p>
-        <p>Get help with...</p>
-        <Link to="/">gaining clarity</Link>
-        <Link to="/risk">understanding your risk</Link>
-        <p>knowing if it's even abuse</p>
-        <p>learning how abuse affects your health</p>
-        <p>learning how abuse affects your kids</p>
-        <p>getting out safely</p>
+        <img
+          id="close-menu"
+          src="../img/white_x.png"
+          aria-label="close menu"
+          className="invisible"
+          onClick={toggleMenu}
+        />
+        <Link to="/">Gain clarity</Link>
+        <Link to="/risk">Understand your risk</Link>
+        <p>Is it abuse?</p>
+        <p>Health effects</p>
+        <p>Effects on kids</p>
+        <p>Get out safely</p>
       </nav>
     </>
   );
