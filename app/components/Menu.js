@@ -9,14 +9,14 @@ function ComponentName() {
   }
 
   return (
-    <nav>
+    <>
       <img
         src="../img/white_hamburger_menu.png"
         id="menu-link"
         aria-label="toggle menu"
         onClick={toggleMenu}
       />
-      <div id="menu" className="hidden">
+      <nav id="menu" className="hidden">
         <p id="close-menu" className="hidden" onClick={toggleMenu}>
           close menu
         </p>
@@ -27,8 +27,8 @@ function ComponentName() {
         <p>learning how abuse affects your health</p>
         <p>learning how abuse affects your kids</p>
         <p>getting out safely</p>
-      </div>
-    </nav>
+      </nav>
+    </>
   );
 }
 

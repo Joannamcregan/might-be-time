@@ -41,6 +41,28 @@ img.logo {
   align-items: center;
   justify-content: space-around;
   border: solid white 2px;
+  position: relative;
+}
+nav#menu {
+  z-index: 900;
+  position: absolute;
+  top: 0;
+  right: 0px;
+  width: fit-content;
+  height: fit-content;
+  padding: 20px;
+}
+header.cnn nav#menu {
+  background: var(--basic-red);
+}
+header.nbc nav#menu {
+  background: var(--basic-navy);
+}
+nav#menu a {
+  color: white;
+}
+nav#menu a:visited {
+  color: white;
 }
 #overlay {
   background: rgba(255, 255, 255, 0.85);
