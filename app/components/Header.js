@@ -23,6 +23,11 @@ function Header(props) {
               alt="a white, pixelated heart appears with streaks and blobs of blue, white, and red light around it"
               className={`logo ${props.redirectSelection == "fox" ? "" : "hidden"}`}
             />
+            <img
+              src="../img/heart_aljazeera.jpg"
+              alt="a white heart with a swirly design in the center appears on an orange background"
+              className={`logo ${props.redirectSelection == "aljazeera" ? "" : "hidden"}`}
+            />
           </Link>
           <Menu />
         </div>

@@ -40,6 +40,10 @@ header.nbc {
 header.fox {
   background: var(--basic-blue);
 }
+header.aljazeera {
+  background: var(--basically-white);
+  box-shadow: 0px 3px 3px #c1c1c1;
+}
 img.logo {
   width: 75px;
   height: auto;
@@ -77,6 +81,8 @@ header.nbc nav#menu {
 }
 header.fox nav#menu {
   background: var(--basic-blue);
+}
+header.aljazeera nav#menu {
 }
 #close-menu {
   position: absolute;
