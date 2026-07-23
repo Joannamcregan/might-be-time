@@ -16,9 +16,12 @@ function Overlay(props) {
         <p>
           We will also try to redirect you if we notice any sudden jerking
           movements from your mobile device. If you are using an iPhone, please
-          click
-          <span id="safari-permission"> here </span> so we can prompt you to
-          give us permission to access information about your device's motions.
+          click{" "}
+          <span id="safari-permission" className="underline">
+            here
+          </span>{" "}
+          so we can prompt you to give us permission to access information about
+          your device's motions.
         </p>
         <div id="redirect-options-section">
           <p>

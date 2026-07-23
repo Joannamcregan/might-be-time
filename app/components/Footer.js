@@ -4,8 +4,10 @@ function Footer(props) {
   return (
     <footer className={props.redirectSelection}>
       <p
+        className="underline"
         onClick={() => {
           document.getElementById("overlay").classList.remove("hidden");
+          window.scrollTo(0, 0);
         }}
       >
         safety settings

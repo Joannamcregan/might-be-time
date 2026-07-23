@@ -3,6 +3,7 @@
   --basically-white: #fafafa;
   --basic-red: #e8372d;
   --basic-navy: #043682;
+  --basic-blue: #00005a;
   --crushed-black: rgb(17, 17, 17);
   --light-lavender: rgb(239, 234, 246);
   --light-teal: rgb(220, 237, 237);
@@ -11,7 +12,10 @@
   display: none !important;
 }
 .invisible {
-  visibility: none;
+  visibility: hidden;
+}
+.underline {
+  text-decoration: underline;
 }
 body {
   position: relative;
@@ -33,25 +37,33 @@ header.cnn {
 header.nbc {
   background: var(--basic-navy);
 }
+header.fox {
+  background: var(--basic-blue);
+}
 img.logo {
   width: 75px;
   height: auto;
 }
 #header-content {
-  width: 1200px;
+  width: 700px;
   max-width: 90%;
   margin: auto;
   display: flex;
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   position: relative;
+}
+#menu-link,
+#close-menu {
+  height: 40px;
+  width: auto;
 }
 nav#menu {
   z-index: 900;
   position: absolute;
-  top: 0;
+  top: 10;
   right: 0px;
   width: fit-content;
   height: fit-content;
@@ -62,6 +74,9 @@ header.cnn nav#menu {
 }
 header.nbc nav#menu {
   background: var(--basic-navy);
+}
+header.fox nav#menu {
+  background: var(--basic-blue);
 }
 #close-menu {
   position: absolute;
@@ -139,5 +154,9 @@ footer.cnn {
 }
 footer.nbc {
   background: var(--basic-navy);
+  color: white;
+}
+footer.fox {
+  background: var(--basic-blue);
   color: white;
 }

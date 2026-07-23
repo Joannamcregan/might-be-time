@@ -18,6 +18,11 @@ function Header(props) {
               alt="three simple hearts--one half blue and half green, one half purple and half red, and one half orange and half yellow--are arranged in a clover shape"
               className={`logo ${props.redirectSelection == "nbc" ? "" : "hidden"}`}
             />
+            <img
+              src="../img/heart_fox.jpg"
+              alt="a white, pixelated heart appears with streaks and blobs of blue, white, and red light around it"
+              className={`logo ${props.redirectSelection == "fox" ? "" : "hidden"}`}
+            />
           </Link>
           <Menu />
         </div>
