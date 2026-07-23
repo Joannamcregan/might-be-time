@@ -1,6 +1,17 @@
 import React, { useState, useEffect } from "react";
 
 function Overlay(props) {
+  function selectOption(e) {
+    let redirectOptions = document.querySelectorAll(".redirect-option");
+    for (let i = 0; i < redirectOptions.length; i++) {
+      console.log(redirectOptions[i].checked);
+      redirectOptions[i].checked = false;
+    }
+    setTimeout(() => {
+      e.target.checked = true;
+    }, 1);
+  }
+
   return (
     <div
       id="overlay"
@@ -35,6 +46,9 @@ function Overlay(props) {
               id="cnn"
               name="redirect-selection"
               value="cnn"
+              checked
+              className="redirect-option"
+              onChange={selectOption}
             />
             <label htmlFor="cnn">CNN</label>
             <br></br>
@@ -43,14 +57,18 @@ function Overlay(props) {
               id="nbc"
               name="redirect-selection"
               value="nbc"
+              className="redirect-option"
+              onChange={selectOption}
             />
-            <label htmlFor="nbc">NBC</label>
+            <label htmlFor="nbc">NBC News</label>
             <br></br>
             <input
               type="radio"
               id="fox"
               name="redirect-selection"
               value="fox"
+              className="redirect-option"
+              onChange={selectOption}
             />
             <label htmlFor="fox">Fox News</label>
             <br></br>
@@ -59,6 +77,8 @@ function Overlay(props) {
               id="aljazeera"
               name="redirect-selection"
               value="aljazeera"
+              className="redirect-option"
+              onChange={selectOption}
             />
             <label htmlFor="aljazeera">Al Jazeera</label>
             <br></br>
