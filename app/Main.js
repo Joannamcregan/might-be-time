@@ -5,6 +5,7 @@ import Overlay from "./components/Overlay";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Risk from "./components/Risk";
+import QuickExit from "./components/Redirect";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function Main() {
@@ -21,6 +22,7 @@ function Main() {
         redirectSelection={redirectSelection}
         setRedirectSelection={setRedirectSelection}
       />
+      <QuickExit redirectSelection={redirectSelection} />
       <Routes>
         <Route
           path="/"

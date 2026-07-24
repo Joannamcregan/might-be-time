@@ -1,11 +1,9 @@
 import React, { useEffect } from "react";
 
-function QuickExit() {
+function QuickExit(props) {
   return (
     <>
-      <div id="exit">
-        <span>Exit</span>
-      </div>
+      <p id="exit">Exit</p>
     </>
   );
 }
