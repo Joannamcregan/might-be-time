@@ -8,7 +8,11 @@ import Risk from "./components/Risk";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function Main() {
-  const [redirectSelection, setRedirectSelection] = useState("cnn");
+  const [redirectSelection, setRedirectSelection] = useState(
+    localStorage.getItem("selectedStyle")
+      ? localStorage.getItem("selectedStyle")
+      : "cnn"
+  );
 
   return (
     <BrowserRouter>

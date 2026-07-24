@@ -29,7 +29,7 @@ function Header(props) {
               className={`logo ${props.redirectSelection == "aljazeera" ? "" : "hidden"}`}
             />
           </Link>
-          <Menu />
+          <Menu redirectSelection={props.redirectSelection} />
         </div>
       </header>
     </>

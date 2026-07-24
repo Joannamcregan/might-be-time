@@ -15,7 +15,7 @@ function Overlay(props) {
   return (
     <div
       id="overlay"
-      // className={localStorage.getItem("selectedStyle") ? "hidden" : ""}
+      className={localStorage.getItem("selectedStyle") ? "hidden" : ""}
     >
       <div id="overlay-content">
         <h1>Safety first</h1>
@@ -79,9 +79,7 @@ function Overlay(props) {
               id="aljazeera"
               name="redirect-selection"
               value="aljazeera"
-              //   checked={
-              //     props.redirectSelection == "aljazeera" ? "true" : "false"
-              //   }
+              checked={props.redirectSelection == "aljazeera"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -98,6 +96,23 @@ function Overlay(props) {
               localStorage.setItem("selectedStyle", selection);
               setTimeout(() => {
                 document.getElementById("overlay").classList.add("hidden");
+                if (selection == "nbc") {
+                  document
+                    .getElementById("favicon")
+                    .setAttribute("href", "../img/icon_heart_nbc.png");
+                } else if (selection == "fox") {
+                  document
+                    .getElementById("favicon")
+                    .setAttribute("href", "../img/icon_heart_fox.png");
+                } else if (selection == "aljazeera") {
+                  document
+                    .getElementById("favicon")
+                    .setAttribute("href", "../img/icon_heart_aljazeera.png");
+                } else if (selection == "cnn") {
+                  document
+                    .getElementById("favicon")
+                    .setAttribute("href", "../img/icon_heart_cnn.png");
+                }
                 window.scrollTo(0, 0);
               }, 200);
             }}

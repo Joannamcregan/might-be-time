@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
 
-function ComponentName() {
+function Menu(props) {
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("hidden");
     document.getElementById("menu-link").classList.toggle("invisible");
@@ -11,21 +11,34 @@ function ComponentName() {
   return (
     <>
       <img
-        src="../img/white_hamburger_menu.png"
+        src={
+          props.redirectSelection == "aljazeera"
+            ? "../img/black_hamburger_menu.png"
+            : "../img/white_hamburger_menu.png"
+        }
         id="menu-link"
+        className="pointer"
         aria-label="open menu"
         onClick={toggleMenu}
       />
       <nav id="menu" className="hidden">
         <img
           id="close-menu"
-          src="../img/white_x.png"
+          src={
+            props.redirectSelection == "aljazeera"
+              ? "../img/black_x.png"
+              : "../img/white_x.png"
+          }
           aria-label="close menu"
-          className="invisible"
+          className="invisible pointer"
           onClick={toggleMenu}
         />
-        <Link to="/">Gain clarity</Link>
-        <Link to="/risk">Understand your risk</Link>
+        <Link to="/" onClick={toggleMenu}>
+          Gain clarity
+        </Link>
+        <Link to="/risk" onClick={toggleMenu}>
+          Understand your risk
+        </Link>
         <p>Is it abuse?</p>
         <p>Health effects</p>
         <p>Effects on kids</p>
@@ -35,4 +48,4 @@ function ComponentName() {
   );
 }
 
-export default ComponentName;
+export default Menu;

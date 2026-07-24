@@ -12,7 +12,7 @@ function Footer(props) {
       >
         safety settings
       </p>
-      <p>copyright &copy; {new Date().getFullYear()}</p>
+      <p>copyright {new Date().getFullYear()}</p>
     </footer>
   );
 }
