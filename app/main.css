@@ -1,12 +1,11 @@
 :root {
-  --medium-gray: #bababa;
+  --light-gray: #eaeaea;
   --basically-white: #fafafa;
   --basic-red: #e8372d;
   --basic-navy: #043682;
   --basic-blue: #00005a;
   --crushed-black: rgb(17, 17, 17);
   --light-lavender: rgb(239, 234, 246);
-  --dark-lavender: rgb(107, 107, 174);
   --light-teal: rgb(220, 237, 237);
 }
 .hidden {
@@ -117,11 +116,8 @@ nav#menu a:visited {
   text-align: center;
   padding: 20px;
   margin: 0px;
-  background: var(--light-lavender);
-  box-shadow:
-    0px -2px 10px var(--light-lavender),
-    0px -5px 15px var(--light-lavender);
-  border-radius: 10px;
+  background: var(--light-teal);
+  box-shadow: 0px 0px 10px var(--light-teal);
   position: fixed;
   bottom: 0px;
   left: 0px;
