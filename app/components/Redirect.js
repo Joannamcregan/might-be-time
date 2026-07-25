@@ -1,32 +1,25 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
 
-function redirectPage(destination = "https://cnn.com") {
-  if (localStorage.getItem("selectedStyle")) {
-    destination = localStorage.getItem("selectedStyle");
+function Redirect(props) {
+  function redirectToSelected(destination = "https://cnn.com") {
+    // if (localStorage.getItem("selectedStyle")) {
+    //   destination = localStorage.getItem("selectedStyle");
+    // }
+    if (destination == "nbc") {
+      destination = "https://nbcnews.com";
+    } else if (destination == "fox") {
+      destination = "https://foxnews.com";
+    } else if (destination == "aljazeera") {
+      destination = "https://aljazeera.com";
+    } else if (destination == "cnn") {
+      destination = "https://cnn.com";
+    }
+    // window.location.replace(destination);
+    console.log(
+      `totally going to redirect to ${destination} once testing is complete`
+    );
   }
-  if (destination == "nbc") {
-    destination = "https://nbcnews.com";
-  } else if (destination == "fox") {
-    destination = "https://foxnews.com";
-  } else if (destination == "aljazeera") {
-    destination = "https://aljazeera.com";
-  } else if (destination == "cnn") {
-    destination = "https://cnn.com";
-  }
-  window.location.replace(destination);
+  return <></>;
 }
 
-function QuickExit(props) {
-  return (
-    <p
-      id="exit"
-      onClick={props => {
-        redirectPage(props.redirectSelection);
-      }}
-    >
-      Exit
-    </p>
-  );
-}
-
-export default QuickExit;
+export default Redirectprops;

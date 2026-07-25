@@ -5,7 +5,9 @@ import Overlay from "./components/Overlay";
 import Footer from "./components/Footer";
 import Home from "./components/Home";
 import Risk from "./components/Risk";
-import QuickExit from "./components/Redirect";
+import QuickExit from "./components/QuickExit";
+import VisibilityRedirect from "./components/VisibilityRedirect";
+import InformedContext from "./InformedContext";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function Main() {
@@ -16,7 +18,9 @@ function Main() {
   );
 
   return (
+    // <InformedContext.Provider value={}>
     <BrowserRouter>
+      <VisibilityRedirect redirectSelection={redirectSelection} />
       <Header redirectSelection={redirectSelection} />
       <Overlay
         redirectSelection={redirectSelection}
@@ -35,6 +39,7 @@ function Main() {
       </Routes>
       <Footer redirectSelection={redirectSelection} />
     </BrowserRouter>
+    // </InformedContext.Provider>
   );
 }
 
