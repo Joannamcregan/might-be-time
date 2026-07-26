@@ -1,6 +1,9 @@
-import React, { useState, useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
+import InformedContext from "../InformedContext";
 
 function Overlay(props) {
+  const setRedirectSelection = useContext(InformedContext);
+
   function selectOption(e) {
     let redirectOptions = document.querySelectorAll(".redirect-option");
     for (let i = 0; i < redirectOptions.length; i++) {
@@ -92,7 +95,7 @@ function Overlay(props) {
               let selection = document.querySelector(
                 'input[name="redirect-selection"]:checked'
               ).value;
-              props.setRedirectSelection(selection);
+              setRedirectSelection(selection);
               localStorage.setItem("selectedStyle", selection);
               setTimeout(() => {
                 document.getElementById("overlay").classList.add("hidden");

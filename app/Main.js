@@ -18,28 +18,26 @@ function Main() {
   );
 
   return (
-    // <InformedContext.Provider value={}>
-    <BrowserRouter>
-      <VisibilityRedirect redirectSelection={redirectSelection} />
-      <Header redirectSelection={redirectSelection} />
-      <Overlay
-        redirectSelection={redirectSelection}
-        setRedirectSelection={setRedirectSelection}
-      />
-      <QuickExit redirectSelection={redirectSelection} />
-      <Routes>
-        <Route
-          path="/"
-          element={<Home redirectSelection={redirectSelection} />}
-        />
-        <Route
-          path="/risk"
-          element={<Risk redirectSelection={redirectSelection} />}
-        />
-      </Routes>
-      <Footer redirectSelection={redirectSelection} />
-    </BrowserRouter>
-    // </InformedContext.Provider>
+    <InformedContext.Provider value={setRedirectSelection}>
+      <BrowserRouter>
+        <VisibilityRedirect redirectSelection={redirectSelection} />
+        <Header redirectSelection={redirectSelection} />
+        <Overlay redirectSelection={redirectSelection} />
+        <QuickExit redirectSelection={redirectSelection} />
+        <Routes>
+          <Route
+            path="/"
+            element={<Home redirectSelection={redirectSelection} />}
+          />
+          <Route
+            path="/risk"
+            element={<Risk redirectSelection={redirectSelection} />}
+          />
+        </Routes>
+        <Footer redirectSelection={redirectSelection} />
+      </BrowserRouter>
+      //{" "}
+    </InformedContext.Provider>
   );
 }
 
