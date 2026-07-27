@@ -41,7 +41,7 @@ function Main() {
       value={{ setRedirectSelection, redirectSelection, redirect }}
     >
       <BrowserRouter>
-        <VisibilityRedirect redirectSelection={redirectSelection} />
+        <VisibilityRedirect />
         <Header redirectSelection={redirectSelection} />
         <Overlay />
         <QuickExit redirectSelection={redirectSelection} />
