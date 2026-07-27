@@ -46,14 +46,8 @@ function Main() {
         <Overlay />
         <QuickExit redirectSelection={redirectSelection} />
         <Routes>
-          <Route
-            path="/"
-            element={<Home redirectSelection={redirectSelection} />}
-          />
-          <Route
-            path="/risk"
-            element={<Risk redirectSelection={redirectSelection} />}
-          />
+          <Route path="/" element={<Home />} />
+          <Route path="/risk" element={<Risk />} />
         </Routes>
         <Footer redirectSelection={redirectSelection} />
       </BrowserRouter>

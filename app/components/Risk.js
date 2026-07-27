@@ -4,7 +4,7 @@ import Page from "./Page";
 function Risk() {
   return (
     <>
-      <Page title="What You Need to Know About Your Risk of Death from DV">
+      <Page title="Understanding Your Risk">
         <h1>Signs of Increased Risk</h1>
         <p>
           Certain signs indicate that an abuser is more likely to commit murder.

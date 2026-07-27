@@ -1,7 +1,9 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { Link } from "react-router-dom";
+import InformedContext from "../InformedContext";
 
 function Menu(props) {
+  const { redirectSelection } = useContext(InformedContext);
   function toggleMenu() {
     document.getElementById("menu").classList.toggle("hidden");
     document.getElementById("menu-link").classList.toggle("invisible");
@@ -12,7 +14,7 @@ function Menu(props) {
     <>
       <img
         src={
-          props.redirectSelection == "aljazeera"
+          redirectSelection == "aljazeera"
             ? "../img/black_hamburger_menu.png"
             : "../img/white_hamburger_menu.png"
         }
@@ -25,7 +27,7 @@ function Menu(props) {
         <img
           id="close-menu"
           src={
-            props.redirectSelection == "aljazeera"
+            redirectSelection == "aljazeera"
               ? "../img/black_x.png"
               : "../img/white_x.png"
           }
