@@ -2,7 +2,8 @@ import React, { useState, useEffect, useContext } from "react";
 import InformedContext from "../InformedContext";
 
 function Overlay(props) {
-  const setRedirectSelection = useContext(InformedContext);
+  const { setRedirectSelection } = useContext(InformedContext);
+  const { redirectSelection } = useContext(InformedContext);
 
   function selectOption(e) {
     let redirectOptions = document.querySelectorAll(".redirect-option");
@@ -48,7 +49,7 @@ function Overlay(props) {
               type="radio"
               id="cnn"
               name="redirect-selection"
-              checked={props.redirectSelection == "cnn"}
+              checked={redirectSelection == "cnn"}
               value="cnn"
               className="redirect-option"
               onChange={selectOption}
@@ -60,7 +61,7 @@ function Overlay(props) {
               id="nbc"
               name="redirect-selection"
               value="nbc"
-              checked={props.redirectSelection == "nbc"}
+              checked={redirectSelection == "nbc"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -71,7 +72,7 @@ function Overlay(props) {
               id="fox"
               name="redirect-selection"
               value="fox"
-              checked={props.redirectSelection == "fox"}
+              checked={redirectSelection == "fox"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -82,7 +83,7 @@ function Overlay(props) {
               id="aljazeera"
               name="redirect-selection"
               value="aljazeera"
-              checked={props.redirectSelection == "aljazeera"}
+              checked={redirectSelection == "aljazeera"}
               className="redirect-option"
               onChange={selectOption}
             />

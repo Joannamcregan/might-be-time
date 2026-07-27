@@ -1,7 +1,11 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useContext } from "react";
 import { redirect } from "react-router-dom";
+import InformedContext from "../InformedContext";
 
 function VisibilityRedirect(props) {
+  const { redirectSelection } = useContext(InformedContext);
+  const { redirect } = useContext(InformedContext);
+
   useEffect(() => {
     const redirect = (destination = "https://cnn.com") => {
       if (localStorage.getItem("selectedStyle")) {
