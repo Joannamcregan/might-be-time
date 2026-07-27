@@ -1,27 +1,14 @@
-import React, { useEffect, useState } from "react";
-
-function redirectPage(destination = "https://cnn.com") {
-  if (localStorage.getItem("selectedStyle")) {
-    destination = localStorage.getItem("selectedStyle");
-  }
-  if (destination == "nbc") {
-    destination = "https://nbcnews.com";
-  } else if (destination == "fox") {
-    destination = "https://foxnews.com";
-  } else if (destination == "aljazeera") {
-    destination = "https://aljazeera.com";
-  } else if (destination == "cnn") {
-    destination = "https://cnn.com";
-  }
-  window.location.replace(destination);
-}
+import React, { useEffect, useState, useContext } from "react";
+import InformedContext from "../InformedContext";
 
 function QuickExit(props) {
+  const { redirectSelection } = useContext(InformedContext);
+  const { redirect } = useContext(InformedContext);
   return (
     <p
       id="exit"
-      onClick={props => {
-        redirectPage(props.redirectSelection);
+      onClick={redirectSelection => {
+        redirect(redirectSelection);
       }}
     >
       Exit

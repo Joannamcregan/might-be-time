@@ -8,7 +8,6 @@ function Overlay(props) {
   function selectOption(e) {
     let redirectOptions = document.querySelectorAll(".redirect-option");
     for (let i = 0; i < redirectOptions.length; i++) {
-      console.log(redirectOptions[i].checked);
       redirectOptions[i].checked = false;
     }
     setTimeout(() => {

@@ -42,16 +42,15 @@ function Main() {
     >
       <BrowserRouter>
         <VisibilityRedirect />
-        <Header redirectSelection={redirectSelection} />
+        <Header />
         <Overlay />
         <QuickExit redirectSelection={redirectSelection} />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/risk" element={<Risk />} />
         </Routes>
-        <Footer redirectSelection={redirectSelection} />
+        <Footer />
       </BrowserRouter>
-      //{" "}
     </InformedContext.Provider>
   );
 }

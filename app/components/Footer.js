@@ -1,8 +1,10 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
+import InformedContext from "../InformedContext";
 
 function Footer(props) {
+  const { redirectSelection } = useContext(InformedContext);
   return (
-    <footer className={props.redirectSelection}>
+    <footer className={redirectSelection}>
       <p
         className="underline"
         onClick={() => {
