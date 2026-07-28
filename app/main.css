@@ -194,3 +194,6 @@ footer.fox {
   background: var(--basic-blue);
   color: white;
 }
+footer.aljazeera {
+  border-top: solid var(--light-gray) 2px;
+}
