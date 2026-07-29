@@ -53,7 +53,7 @@ function Overlay(props) {
               type="radio"
               id="cnn"
               name="redirect-selection"
-              checked={appState.redirectSelection == "cnn"}
+              checked={appState.styleSelection == "cnn"}
               value="cnn"
               className="redirect-option"
               onChange={selectOption}
@@ -65,7 +65,7 @@ function Overlay(props) {
               id="nbc"
               name="redirect-selection"
               value="nbc"
-              checked={appState.redirectSelection == "nbc"}
+              checked={appState.styleSelection == "nbc"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -76,7 +76,7 @@ function Overlay(props) {
               id="fox"
               name="redirect-selection"
               value="fox"
-              checked={appState.redirectSelection == "fox"}
+              checked={appState.styleSelection == "fox"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -87,7 +87,7 @@ function Overlay(props) {
               id="aljazeera"
               name="redirect-selection"
               value="aljazeera"
-              checked={appState.redirectSelection == "aljazeera"}
+              checked={appState.styleSelection == "aljazeera"}
               className="redirect-option"
               onChange={selectOption}
             />
