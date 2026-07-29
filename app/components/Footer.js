@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import InformedContext from "../InformedContext";
+import InformedContext from "../StateContext";
 
 function Footer(props) {
   const { redirectSelection } = useContext(InformedContext);

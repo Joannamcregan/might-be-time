@@ -1,14 +1,14 @@
 import React, { useEffect, useState, useContext } from "react";
-import InformedContext from "../InformedContext";
+import StateContext from "../StateContext";
 
 function QuickExit(props) {
-  const { redirectSelection } = useContext(InformedContext);
-  const { redirect } = useContext(InformedContext);
+  const { redirectSelection } = useContext(StateContext);
+  const { redirect } = useContext(StateContext);
   return (
     <p
       id="exit"
       onClick={redirectSelection => {
-        redirect(redirectSelection);
+        StateContext.redirect(redirectSelection);
       }}
     >
       Exit

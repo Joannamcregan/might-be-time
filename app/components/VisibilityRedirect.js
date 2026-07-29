@@ -1,14 +1,20 @@
 import React, { useEffect, useContext } from "react";
 import { redirect } from "react-router-dom";
-import InformedContext from "../InformedContext";
+import DispatchContext from "../DispatchContext";
+import StateContext from "../StateContext";
 
 function VisibilityRedirect(props) {
-  const { redirectSelection } = useContext(InformedContext);
-  const { redirect } = useContext(InformedContext);
+  const appState = useContext(StateContext);
+  const appDispatch = useContext(DispatchContext);
+
+  function redirect(destination) {
+    appDispatch({ type: "redirect" });
+  }
 
   useEffect(() => {
-    document.addEventListener("visibilitychange", redirectSelection => {
-      redirect(redirectSelection);
+    let appDestination = appState.redirectSelection;
+    document.addEventListener("visibilitychange", appDestination => {
+      redirect(appDestination);
     });
     return () => {
       document.removeEventListener(

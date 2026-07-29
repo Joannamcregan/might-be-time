@@ -1,9 +1,14 @@
 import React, { useState, useEffect, useContext } from "react";
-import InformedContext from "../InformedContext";
+import StateContext from "../StateContext";
+import DispatchContext from "../DispatchContext";
 
 function Overlay(props) {
-  const { setRedirectSelection } = useContext(InformedContext);
-  const { redirectSelection } = useContext(InformedContext);
+  const appState = useContext(StateContext);
+  const appDispatch = useContext(DispatchContext);
+
+  function setRedirectSelection(destination) {
+    appDispatch({ type: "setRedirectSelection" });
+  }
 
   function selectOption(e) {
     let redirectOptions = document.querySelectorAll(".redirect-option");
@@ -23,9 +28,9 @@ function Overlay(props) {
       <div id="overlay-content">
         <h1>Safety first</h1>
         <p>
-          If you need to quickly leave this page, press the X button near the
-          bottom right corner of the screen and we will redirect you to a
-          different website.
+          If you need to quickly leave this page, Exit button near the bottom
+          right corner of the screen and we will redirect you to a different
+          website.
         </p>
         <p>
           We will also try to redirect you if we notice any sudden jerking
@@ -48,7 +53,7 @@ function Overlay(props) {
               type="radio"
               id="cnn"
               name="redirect-selection"
-              checked={redirectSelection == "cnn"}
+              checked={appState.redirectSelection == "cnn"}
               value="cnn"
               className="redirect-option"
               onChange={selectOption}
@@ -60,7 +65,7 @@ function Overlay(props) {
               id="nbc"
               name="redirect-selection"
               value="nbc"
-              checked={redirectSelection == "nbc"}
+              checked={appState.redirectSelection == "nbc"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -71,7 +76,7 @@ function Overlay(props) {
               id="fox"
               name="redirect-selection"
               value="fox"
-              checked={redirectSelection == "fox"}
+              checked={appState.redirectSelection == "fox"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -82,7 +87,7 @@ function Overlay(props) {
               id="aljazeera"
               name="redirect-selection"
               value="aljazeera"
-              checked={redirectSelection == "aljazeera"}
+              checked={appState.redirectSelection == "aljazeera"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -92,26 +97,30 @@ function Overlay(props) {
           <span
             id="redirect-selection-okay"
             onClick={() => {
-              let selection = document.querySelector(
+              let selectedName = document.querySelector(
                 'input[name="redirect-selection"]:checked'
               ).value;
-              setRedirectSelection(selection);
-              localStorage.setItem("selectedStyle", selection);
+              console.log("starting off, the selection is " + selectedName);
+              setRedirectSelection(selectedName);
+              localStorage.setItem("selectedStyle", selectedName);
               setTimeout(() => {
+                console.log(
+                  "in the set timeout, the selectedName is " + selectedName
+                );
                 document.getElementById("overlay").classList.add("hidden");
-                if (selection == "nbc") {
+                if (selectedName == "nbc") {
                   document
                     .getElementById("favicon")
                     .setAttribute("href", "../img/icon_heart_nbc.png");
-                } else if (selection == "fox") {
+                } else if (selectedName == "fox") {
                   document
                     .getElementById("favicon")
                     .setAttribute("href", "../img/icon_heart_fox.png");
-                } else if (selection == "aljazeera") {
+                } else if (selectedName == "aljazeera") {
                   document
                     .getElementById("favicon")
                     .setAttribute("href", "../img/icon_heart_aljazeera.png");
-                } else if (selection == "cnn") {
+                } else if (selectedName == "cnn") {
                   document
                     .getElementById("favicon")
                     .setAttribute("href", "../img/icon_heart_cnn.png");

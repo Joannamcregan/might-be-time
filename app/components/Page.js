@@ -1,5 +1,5 @@
 import React, { useEffect, useState, useContext } from "react";
-import InformedContext from "../InformedContext";
+import InformedContext from "../StateContext";
 import MainTag from "./MainTag";
 
 function Page(props) {

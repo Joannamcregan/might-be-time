@@ -1,7 +1,7 @@
 import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import Menu from "./Menu";
-import InformedContext from "../InformedContext";
+import InformedContext from "../StateContext";
 
 function Header(props) {
   const { redirectSelection } = useContext(InformedContext);
