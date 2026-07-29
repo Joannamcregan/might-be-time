@@ -53,12 +53,6 @@ function Main() {
 
   const [state, dispatch] = useReducer(theReducer, initialState);
 
-  // const [redirectSelection, setRedirectSelection] = useState(
-  //   localStorage.getItem("selectedStyle")
-  //     ? localStorage.getItem("selectedStyle")
-  //     : "cnn"
-  // );
-
   function redirect(destination = "https://cnn.com") {
     if (localStorage.getItem("selectedStyle")) {
       destination = localStorage.getItem("selectedStyle");
