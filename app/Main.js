@@ -13,10 +13,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 function Main() {
   const initialState = {
-    redirectSelection: localStorage.getItem("selectedDestination")
-      ? localStorage.getItem("selectedDestination")
-      : "https://cnn.com",
-    styleSelection: localStorage.getItem("selectedStyle")
+    redirectSelection: localStorage.getItem("selectedStyle")
       ? localStorage.getItem("selectedStyle")
       : "cnn",
     redirect: (destination = "https://cnn.com") => {
@@ -41,22 +38,14 @@ function Main() {
 
   function theReducer(state, action) {
     switch (action.type) {
-      case "updateStyle":
-        return {
-          redirectSelection: state.redirectSelection,
-          styleSelection: action.value,
-          redirect: state.redirect
-        };
       case "setRedirectSelection":
         return {
           redirectSelection: action.value,
-          styleSelection: state.styleSelection,
           redirect: state.redirect
         };
       case "redirect":
         return {
           redirectSelection: state.redirectSelection,
-          styleSelection: state.styleSelection,
           redirect: redirect(action.value)
         };
     }

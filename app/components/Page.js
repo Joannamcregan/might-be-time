@@ -1,20 +1,20 @@
-import React, { useEffect, useState, useContext } from "react";
-import InformedContext from "../StateContext";
+import React, { useEffect, useState, useContext, useReducer } from "react";
+import StateContext from "../StateContext";
 import MainTag from "./MainTag";
 
 function Page(props) {
-  const { redirectSelection } = useContext(InformedContext);
+  const appState = useContext(StateContext);
   useEffect(() => {
     document.title = `Breaking Free | ${props.title}`;
-    if (redirectSelection == "nbc") {
+    if (appState.redirectSelection == "nbc") {
       document
         .getElementById("favicon")
         .setAttribute("href", "../img/icon_heart_nbc.png");
-    } else if (redirectSelection == "fox") {
+    } else if (appState.redirectSelection == "fox") {
       document
         .getElementById("favicon")
         .setAttribute("href", "../img/icon_heart_fox.png");
-    } else if (redirectSelection == "aljazeera") {
+    } else if (appState.redirectSelection == "aljazeera") {
       document
         .getElementById("favicon")
         .setAttribute("href", "../img/icon_heart_aljazeera.png");
@@ -26,11 +26,7 @@ function Page(props) {
     window.scrollTo(0, 0);
   }, []);
 
-  return (
-    <MainTag redirectSelection={props.redirectSelection}>
-      {props.children}
-    </MainTag>
-  );
+  return <MainTag>{props.children}</MainTag>;
 }
 
 export default Page;

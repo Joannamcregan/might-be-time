@@ -1,37 +1,37 @@
-import React, { useState, useContext } from "react";
+import React, { useState, useContext, useReducer } from "react";
 import { Link } from "react-router-dom";
 import Menu from "./Menu";
-import InformedContext from "../StateContext";
+import StateContext from "../StateContext";
 
 function Header(props) {
-  const { redirectSelection } = useContext(InformedContext);
+  const appState = useContext(StateContext);
   return (
     <>
-      <header className={redirectSelection}>
+      <header className={appState.redirectSelection}>
         <div id="header-content">
           <Link to="/">
             <img
               src="../img/heart_cnn.jpg"
               alt="a simple drawing of a heart with an EKG reading line"
-              className={`logo ${redirectSelection == "cnn" ? "" : "hidden"}`}
+              className={`logo ${appState.redirectSelection == "cnn" ? "" : "hidden"}`}
             />
             <img
               src="../img/heart_nbc.jpg"
               alt="three simple hearts--one half blue and half green, one half purple and half red, and one half orange and half yellow--are arranged in a clover shape"
-              className={`logo ${redirectSelection == "nbc" ? "" : "hidden"}`}
+              className={`logo ${appState.redirectSelection == "nbc" ? "" : "hidden"}`}
             />
             <img
               src="../img/heart_fox.jpg"
               alt="a white, pixelated heart appears with streaks and blobs of blue, white, and red light around it"
-              className={`logo ${redirectSelection == "fox" ? "" : "hidden"}`}
+              className={`logo ${appState.redirectSelection == "fox" ? "" : "hidden"}`}
             />
             <img
               src="../img/heart_aljazeera.jpg"
               alt="a white heart with a swirly design in the center appears on an orange background"
-              className={`logo ${redirectSelection == "aljazeera" ? "" : "hidden"}`}
+              className={`logo ${appState.redirectSelection == "aljazeera" ? "" : "hidden"}`}
             />
           </Link>
-          <Menu redirectSelection={redirectSelection} />
+          <Menu redirectSelection={appState.redirectSelection} />
         </div>
       </header>
     </>

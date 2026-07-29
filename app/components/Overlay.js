@@ -1,14 +1,10 @@
-import React, { useState, useEffect, useContext } from "react";
+import React, { useState, useEffect, useContext, useReducer } from "react";
 import StateContext from "../StateContext";
 import DispatchContext from "../DispatchContext";
 
 function Overlay(props) {
   const appState = useContext(StateContext);
   const appDispatch = useContext(DispatchContext);
-
-  function setRedirectSelection(destination) {
-    appDispatch({ type: "setRedirectSelection" });
-  }
 
   function selectOption(e) {
     let redirectOptions = document.querySelectorAll(".redirect-option");
@@ -53,7 +49,7 @@ function Overlay(props) {
               type="radio"
               id="cnn"
               name="redirect-selection"
-              checked={appState.styleSelection == "cnn"}
+              checked={appState.redirectSelection == "cnn"}
               value="cnn"
               className="redirect-option"
               onChange={selectOption}
@@ -65,7 +61,7 @@ function Overlay(props) {
               id="nbc"
               name="redirect-selection"
               value="nbc"
-              checked={appState.styleSelection == "nbc"}
+              checked={appState.redirectSelection == "nbc"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -76,7 +72,7 @@ function Overlay(props) {
               id="fox"
               name="redirect-selection"
               value="fox"
-              checked={appState.styleSelection == "fox"}
+              checked={appState.redirectSelection == "fox"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -87,7 +83,7 @@ function Overlay(props) {
               id="aljazeera"
               name="redirect-selection"
               value="aljazeera"
-              checked={appState.styleSelection == "aljazeera"}
+              checked={appState.redirectSelection == "aljazeera"}
               className="redirect-option"
               onChange={selectOption}
             />
@@ -100,12 +96,15 @@ function Overlay(props) {
               let selectedName = document.querySelector(
                 'input[name="redirect-selection"]:checked'
               ).value;
-              console.log("starting off, the selection is " + selectedName);
-              setRedirectSelection(selectedName);
+              appDispatch({
+                type: "setRedirectSelection",
+                value: selectedName
+              });
               localStorage.setItem("selectedStyle", selectedName);
               setTimeout(() => {
                 console.log(
-                  "in the set timeout, the selectedName is " + selectedName
+                  "now the appstate redirect selection is  " +
+                    appState.redirectSelection
                 );
                 document.getElementById("overlay").classList.add("hidden");
                 if (selectedName == "nbc") {

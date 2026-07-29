@@ -1,14 +1,18 @@
-import React, { useState, useContext } from "react";
-import InformedContext from "../StateContext";
+import React, { useState, useContext, useReducer } from "react";
+import StateContext from "../StateContext";
 
 function Footer(props) {
-  const { redirectSelection } = useContext(InformedContext);
+  const appState = useContext(StateContext);
   return (
-    <footer className={redirectSelection}>
+    <footer className={appState.redirectSelection}>
       <p
         className="underline"
         onClick={() => {
           document.getElementById("overlay").classList.remove("hidden");
+          console.log(
+            "starting off, the app state redirect selection is " +
+              appState.redirectSelection
+          );
           window.scrollTo(0, 0);
         }}
       >

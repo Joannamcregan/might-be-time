@@ -1,7 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext, useReducer } from "react";
+import StateContext from "../StateContext";
 
 function MainTag(props) {
-  return <main className={props.redirectSelection}>{props.children}</main>;
+  const appState = useContext(StateContext);
+  return <main className={appState.redirectSelection}>{props.children}</main>;
 }
 
 export default MainTag;
