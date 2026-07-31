@@ -102,10 +102,6 @@ function Overlay(props) {
               });
               localStorage.setItem("selectedStyle", selectedName);
               setTimeout(() => {
-                console.log(
-                  "now the appstate redirect selection is  " +
-                    appState.redirectSelection
-                );
                 document.getElementById("overlay").classList.add("hidden");
                 if (selectedName == "nbc") {
                   document

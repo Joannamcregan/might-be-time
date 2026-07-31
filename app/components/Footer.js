@@ -9,10 +9,6 @@ function Footer(props) {
         className="underline"
         onClick={() => {
           document.getElementById("overlay").classList.remove("hidden");
-          console.log(
-            "starting off, the app state redirect selection is " +
-              appState.redirectSelection
-          );
           window.scrollTo(0, 0);
         }}
       >

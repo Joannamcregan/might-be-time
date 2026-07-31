@@ -1,5 +1,6 @@
 import React, { useState, useReducer } from "react";
 import ReactDOM from "react-dom/client";
+import { useImmerReducer } from "use-immer";
 import Header from "./components/Header";
 import Overlay from "./components/Overlay";
 import Footer from "./components/Footer";
@@ -36,41 +37,18 @@ function Main() {
     }
   };
 
-  function theReducer(state, action) {
+  function theReducer(draft, action) {
     switch (action.type) {
       case "setRedirectSelection":
-        return {
-          redirectSelection: action.value,
-          redirect: state.redirect
-        };
+        draft.redirectSelection = action.value;
+        break;
       case "redirect":
-        return {
-          redirectSelection: state.redirectSelection,
-          redirect: redirect(action.value)
-        };
+        draft.redirect(action.value);
+        break;
     }
   }
 
-  const [state, dispatch] = useReducer(theReducer, initialState);
-
-  function redirect(destination = "https://cnn.com") {
-    if (localStorage.getItem("selectedStyle")) {
-      destination = localStorage.getItem("selectedStyle");
-    }
-    if (destination == "nbc") {
-      destination = "https://nbcnews.com";
-    } else if (destination == "fox") {
-      destination = "https://foxnews.com";
-    } else if (destination == "aljazeera") {
-      destination = "https://aljazeera.com";
-    } else if (destination == "cnn") {
-      destination = "https://cnn.com";
-    }
-    // window.location.replace(destination);
-    console.log(
-      `totally going to redirect to ${destination} once testing is complete`
-    );
-  }
+  const [state, dispatch] = useImmerReducer(theReducer, initialState);
 
   return (
     <StateContext.Provider value={state}>
