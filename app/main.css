@@ -40,10 +40,10 @@ main {
 header.cnn {
   background: var(--basic-red);
 }
-header.nbc {
+header.nbcnews {
   background: var(--basic-navy);
 }
-header.fox {
+header.foxnews {
   background: var(--basic-blue);
 }
 header.aljazeera {
@@ -83,11 +83,11 @@ header.cnn nav#menu {
   background: var(--basic-red);
   box-shadow: 0px 3px 10px #232323;
 }
-header.nbc nav#menu {
+header.nbcnews nav#menu {
   background: var(--basic-navy);
   box-shadow: 0px 3px 10px #0e0e0e;
 }
-header.fox nav#menu {
+header.foxnews nav#menu {
   background: var(--basic-blue);
   box-shadow: 0px 3px 10px #0e0e0e;
 }
@@ -186,11 +186,11 @@ footer.cnn {
   background: var(--crushed-black);
   color: var(--basically-white);
 }
-footer.nbc {
+footer.nbcnews {
   background: var(--basic-navy);
   color: white;
 }
-footer.fox {
+footer.foxnews {
   background: var(--basic-blue);
   color: white;
 }

@@ -17,33 +17,21 @@ function Main() {
     redirectSelection: localStorage.getItem("selectedStyle")
       ? localStorage.getItem("selectedStyle")
       : "cnn",
-    redirect: (destination = "https://cnn.com") => {
-      if (localStorage.getItem("selectedStyle")) {
-        destination = localStorage.getItem("selectedStyle");
-      }
-      if (destination == "nbc") {
-        destination = "https://nbcnews.com";
-      } else if (destination == "fox") {
-        destination = "https://foxnews.com";
-      } else if (destination == "aljazeera") {
-        destination = "https://aljazeera.com";
-      } else if (destination == "cnn") {
-        destination = "https://cnn.com";
-      }
-      // window.location.replace(destination);
-      console.log(
-        `totally going to redirect to ${destination} once testing is complete`
-      );
-    }
+    hasSelection: localStorage.getItem("selectedStyle")
   };
 
   function theReducer(draft, action) {
     switch (action.type) {
       case "setRedirectSelection":
         draft.redirectSelection = action.value;
+        localStorage.setItem("selectedStyle", action.value);
         break;
       case "redirect":
-        draft.redirect(action.value);
+        let destination = "https://" + draft.redirectSelection + ".com";
+        // window.location.replace(destination);
+        console.log(
+          `totally going to redirect to ${destination} once testing is complete`
+        );
         break;
     }
   }

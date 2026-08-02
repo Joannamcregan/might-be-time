@@ -6,14 +6,14 @@ function Page(props) {
   const appState = useContext(StateContext);
   useEffect(() => {
     document.title = `Breaking Free | ${props.title}`;
-    if (appState.redirectSelection == "nbc") {
+    if (appState.redirectSelection == "nbcnews") {
       document
         .getElementById("favicon")
         .setAttribute("href", "../img/icon_heart_nbc.png");
-    } else if (appState.redirectSelection == "fox") {
+    } else if (appState.redirectSelection == "foxnews") {
       document
         .getElementById("favicon")
-        .setAttribute("href", "../img/icon_heart_fox.png");
+        .setAttribute("href", "../img/icon_heart_foxnews.png");
     } else if (appState.redirectSelection == "aljazeera") {
       document
         .getElementById("favicon")

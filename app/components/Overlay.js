@@ -17,10 +17,7 @@ function Overlay(props) {
   }
 
   return (
-    <div
-      id="overlay"
-      className={localStorage.getItem("selectedStyle") ? "hidden" : ""}
-    >
+    <div id="overlay" className={appState.hasSelection ? "hidden" : ""}>
       <div id="overlay-content">
         <h1>Safety first</h1>
         <p>
@@ -58,25 +55,25 @@ function Overlay(props) {
             <br></br>
             <input
               type="radio"
-              id="nbc"
+              id="nbcnews"
               name="redirect-selection"
-              value="nbc"
-              checked={appState.redirectSelection == "nbc"}
+              value="nbcnews"
+              checked={appState.redirectSelection == "nbcnews"}
               className="redirect-option"
               onChange={selectOption}
             />
-            <label htmlFor="nbc">NBC News</label>
+            <label htmlFor="nbcnews">NBC News</label>
             <br></br>
             <input
               type="radio"
-              id="fox"
+              id="foxnews"
               name="redirect-selection"
-              value="fox"
-              checked={appState.redirectSelection == "fox"}
+              value="foxnews"
+              checked={appState.redirectSelection == "foxnews"}
               className="redirect-option"
               onChange={selectOption}
             />
-            <label htmlFor="fox">Fox News</label>
+            <label htmlFor="foxnews">Fox News</label>
             <br></br>
             <input
               type="radio"
@@ -100,14 +97,13 @@ function Overlay(props) {
                 type: "setRedirectSelection",
                 value: selectedName
               });
-              localStorage.setItem("selectedStyle", selectedName);
               setTimeout(() => {
                 document.getElementById("overlay").classList.add("hidden");
-                if (selectedName == "nbc") {
+                if (selectedName == "nbcnews") {
                   document
                     .getElementById("favicon")
                     .setAttribute("href", "../img/icon_heart_nbc.png");
-                } else if (selectedName == "fox") {
+                } else if (selectedName == "foxnews") {
                   document
                     .getElementById("favicon")
                     .setAttribute("href", "../img/icon_heart_fox.png");
