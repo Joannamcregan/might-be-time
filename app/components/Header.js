@@ -16,12 +16,12 @@ function Header(props) {
               className={`logo ${appState.redirectSelection == "cnn" ? "" : "hidden"}`}
             />
             <img
-              src="../img/heart_nbc.jpg"
+              src="../img/heart_nbcnews.jpg"
               alt="three simple hearts--one half blue and half green, one half purple and half red, and one half orange and half yellow--are arranged in a clover shape"
               className={`logo ${appState.redirectSelection == "nbcnews" ? "" : "hidden"}`}
             />
             <img
-              src="../img/heart_fox.jpg"
+              src="../img/heart_foxnews.jpg"
               alt="a white, pixelated heart appears with streaks and blobs of blue, white, and red light around it"
               className={`logo ${appState.redirectSelection == "foxnews" ? "" : "hidden"}`}
             />

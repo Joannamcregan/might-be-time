@@ -99,23 +99,12 @@ function Overlay(props) {
               });
               setTimeout(() => {
                 document.getElementById("overlay").classList.add("hidden");
-                if (selectedName == "nbcnews") {
-                  document
-                    .getElementById("favicon")
-                    .setAttribute("href", "../img/icon_heart_nbc.png");
-                } else if (selectedName == "foxnews") {
-                  document
-                    .getElementById("favicon")
-                    .setAttribute("href", "../img/icon_heart_fox.png");
-                } else if (selectedName == "aljazeera") {
-                  document
-                    .getElementById("favicon")
-                    .setAttribute("href", "../img/icon_heart_aljazeera.png");
-                } else if (selectedName == "cnn") {
-                  document
-                    .getElementById("favicon")
-                    .setAttribute("href", "../img/icon_heart_cnn.png");
-                }
+                document
+                  .getElementById("favicon")
+                  .setAttribute(
+                    "href",
+                    "../img/icon_heart_" + selectedName + ".png"
+                  );
                 window.scrollTo(0, 0);
               }, 200);
             }}
