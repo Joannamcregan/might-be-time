@@ -10,6 +10,7 @@ function Footer(props) {
         onClick={() => {
           document.getElementById("overlay").classList.remove("hidden");
           window.scrollTo(0, 0);
+          document.getElementById("exit").classList.add("glow");
         }}
       >
         safety settings

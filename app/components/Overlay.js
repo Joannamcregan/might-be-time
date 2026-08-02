@@ -99,6 +99,7 @@ function Overlay(props) {
               });
               setTimeout(() => {
                 document.getElementById("overlay").classList.add("hidden");
+                document.getElementById("exit").classList.remove("glow");
                 document
                   .getElementById("favicon")
                   .setAttribute(
