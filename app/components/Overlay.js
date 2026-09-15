@@ -21,15 +21,18 @@ function Overlay(props) {
       <div id="overlay-content">
         <h1>Safety first</h1>
         <p>
-          If you need to quickly leave this page, Exit button near the bottom
-          right corner of the screen and we will redirect you to a different
+          If you need to quickly leave this page, pressing the Exit button at the bottom of the screen and we will redirect you to a different
           website.
         </p>
         <p>
           We will also try to redirect you if we notice any sudden jerking
           movements from your mobile device. If you are using an iPhone, please
           click{" "}
-          <span id="safari-permission" className="underline">
+          <span className="underline" onClick={() => {
+              if (typeof DeviceMotionEvent.requestPermission === "function") {
+                DeviceMotionEvent.requestPermission();
+              }
+            }}>
             here
           </span>{" "}
           so we can prompt you to give us permission to access information about

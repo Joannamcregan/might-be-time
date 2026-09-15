@@ -41,10 +41,6 @@ function Menu(props) {
         <Link to="/risk" onClick={toggleMenu}>
           Understand your risk
         </Link>
-        <p>Is it abuse?</p>
-        <p>Health effects</p>
-        <p>Effects on kids</p>
-        <p>Get out safely</p>
       </nav>
     </>
   );

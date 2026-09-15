@@ -37,6 +37,9 @@ main {
   margin: auto;
   padding-bottom: 100px;
 }
+li{
+  padding-top: 5px;
+}
 header.cnn {
   background: var(--basic-red);
 }
@@ -106,6 +109,9 @@ nav#menu a {
   padding: 10px;
 }
 header.aljazeera nav#menu a {
+  color: black;
+}
+a:visited {
   color: black;
 }
 nav#menu a:visited {

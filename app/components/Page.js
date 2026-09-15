@@ -5,7 +5,7 @@ import MainTag from "./MainTag";
 function Page(props) {
   const appState = useContext(StateContext);
   useEffect(() => {
-    document.title = `Breaking Free | ${props.title}`;
+    document.title = `Breaking It Down | ${props.title}`;
     document
       .getElementById("favicon")
       .setAttribute(
