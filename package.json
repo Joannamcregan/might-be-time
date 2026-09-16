@@ -1,15 +1,13 @@
 {
-  "homepage": "https://joannamcregan.github.io/might-be-time",
   "name": "might-be-time",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
   "scripts": {
-    "build": "npx webpack --mode production",
+    "webpackBuild": "webpack",
     "dev": "webpack serve",
     "test": "echo \"Error: no test specified\" && exit 1",
-    "predeploy": "npm run build",
-    "deploy": "gh-pages -d build"
+    "previewDist": "node previewDist"
   },
   "keywords": [],
   "author": "",
@@ -22,11 +20,11 @@
     "axios": "^1.8.4",
     "babel-loader": "^10.0.0",
     "clean-webpack-plugin": "^4.0.0",
-    "dotenv-webpack": "^8.1.0",
-    "express": "^4.21.2",
-    "fs-extra": "^11.3.0",
+    "dotenv-webpack": "^8.1.1",
+    "express": "^4.22.3",
+    "fs-extra": "^11.4.0",
     "html-webpack-harddisk-plugin": "^2.0.0",
-    "html-webpack-plugin": "^5.6.3",
+    "html-webpack-plugin": "^5.6.8",
     "immer": "^10.2.0",
     "npm-run-all": "^4.1.5",
     "react": "^19.0.0",
